@@ -11,6 +11,7 @@ public class RandomOutput : MonoBehaviour
     void Start()
     {
         int testscore = Random.Range(1, 3);
+        //We make a list (with one item) of Cards, depending on some random luck, we add a Yu Gi Oh! or Magic card
         List<Card> myCards = new List<Card>();
 
         if (testscore == 1)
@@ -28,12 +29,8 @@ public class RandomOutput : MonoBehaviour
             myCards.Add(myCard);
         }
 
+        //Finally, we call some abstracted method to display the information we want.
+        //This information is different depending on the Card Game, but due to polymorphism we can just call the display method.
         something.text = myCards[0].ShowSomeShit();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
