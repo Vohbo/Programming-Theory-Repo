@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicCard : Card
+public class YgoCard : Card
 {
-    public int Manacost { get; set; }
+    public string ExpansionName { get; set; }
 
     public override string ShowSomeShit()
     {
-        return Name + " : " + Manacost;
+        return Name + " : " + ExpansionName;
     }
 }

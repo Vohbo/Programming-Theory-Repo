@@ -10,7 +10,25 @@ public class RandomOutput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        something.text = "Hello";
+        int testscore = Random.Range(1, 3);
+        List<Card> myCards = new List<Card>();
+
+        if (testscore == 1)
+        {
+            MagicCard myCard = new MagicCard();
+            myCard.Name = "Jace, the Mind Sculptor";
+            myCard.Manacost = 5;
+            myCards.Add(myCard);
+        }
+        else
+        {
+            YgoCard myCard = new YgoCard();
+            myCard.Name = "Mystic Tomato";
+            myCard.ExpansionName = "Rear Guard Action";
+            myCards.Add(myCard);
+        }
+
+        something.text = myCards[0].ShowSomeShit();
     }
 
     // Update is called once per frame
